@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090909">
+<title>19.11 | Biệt đội siêu nhân Gao 10A4</title>
+<style>
+:root{--gold:#e7c46b;--gold2:#a77a2c;--ink:#090909;--muted:#c7c0b1}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:radial-gradient(ellipse at 50% 0%,#302414 0,#11100d 38%,#070707 78%);color:#f8f2e6;font-family:Georgia,"Times New Roman",serif;min-height:100vh}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.28;background-image:radial-gradient(#f5d98b 1px,transparent 1px);background-size:47px 47px;mask-image:linear-gradient(to bottom,black,transparent 80%)}
+.wrap{width:min(920px,92%);margin:auto}.gold{color:var(--gold)}.eyebrow{letter-spacing:.28em;text-transform:uppercase;color:#d9bd7a;font:11px Arial,sans-serif}
+button{cursor:pointer;font:inherit}
+#lock{position:fixed;z-index:5;inset:0;display:grid;place-items:center;padding:22px;background:radial-gradient(circle at center,#302414,#090909 68%)}
+.panel{width:min(440px,100%);padding:38px 28px;border:1px solid #8f7138;border-radius:22px;background:linear-gradient(145deg,#17140f,#090909);box-shadow:0 20px 80px #000b,0 0 35px #c69b3a18;text-align:center}
+.crest{width:76px;height:76px;margin:0 auto 20px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:34px;box-shadow:0 0 30px #d6ad5533}
+h1{font-size:clamp(34px,7vw,62px);line-height:1.02;margin:12px 0;color:var(--gold);font-weight:normal;letter-spacing:.04em}
+h2{font-weight:normal;color:var(--gold);font-size:clamp(25px,5vw,38px);margin:0 0 16px}
+.sub{color:var(--muted);font:13px/1.7 Arial,sans-serif;letter-spacing:.06em}
+input{width:100%;padding:15px 16px;margin:20px 0 12px;border:1px solid #80632e;border-radius:10px;background:#0c0b09;color:#fff;text-align:center;font-size:19px;letter-spacing:.3em;outline:none}
+input:focus{border-color:var(--gold);box-shadow:0 0 0 3px #d6ad5520}
+.btn{border:1px solid var(--gold);border-radius:999px;padding:13px 24px;color:#171108;background:linear-gradient(110deg,#a77a2c,#f4dc91,#b78a3b);font:bold 12px Arial,sans-serif;letter-spacing:.15em;text-transform:uppercase}
+#error{min-height:20px;color:#e8a4a4;font:12px Arial,sans-serif}
+#site{display:none}.hero{min-height:88vh;display:grid;place-items:center;text-align:center;padding:80px 0 55px;position:relative}
+.hero:after{content:"";position:absolute;bottom:0;width:140px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
+.hero h1{font-size:clamp(52px,12vw,112px);margin:20px 0 12px;text-shadow:0 0 30px #d6ad5540}
+.hero .team{font:clamp(13px,2.4vw,17px) Arial,sans-serif;letter-spacing:.25em;color:#f4e7c5}
+.seal{font-size:46px;color:var(--gold);filter:drop-shadow(0 0 16px #d6ad5580)}
+section{padding:68px 0;text-align:center}.rule{height:1px;background:linear-gradient(90deg,transparent,#8c6b34,transparent);margin:0 auto 28px;max-width:220px}
+.message{max-width:720px;margin:0 auto;color:#e2dac9;font:16px/2 Arial,sans-serif}
+.quote{border:1px solid #6d542c;border-radius:18px;padding:28px;margin:25px auto;max-width:720px;background:linear-gradient(145deg,#17130d99,#09090999);font-size:clamp(19px,3.5vw,27px);line-height:1.65;color:#f2dfb0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+.tile{border:1px solid #574321;border-radius:14px;padding:23px 12px;background:#100e0a;color:#e9dfca}
+.tile b{display:block;color:var(--gold);font-size:17px;margin-bottom:9px}.tile span{font:12px/1.6 Arial,sans-serif;color:#bdb4a2}
+footer{padding:45px 0 65px;text-align:center;color:#a79d89;font:11px/1.8 Arial,sans-serif;letter-spacing:.12em}
+.controls{position:fixed;right:16px;bottom:16px;z-index:2;display:flex;gap:8px}
+.controls button{border:1px solid #80632e;background:#15120c;color:var(--gold);border-radius:30px;padding:11px 14px;font:12px Arial,sans-serif}
+.spark{color:var(--gold);font-size:18px}
+@media(max-width:600px){.grid{grid-template-columns:1fr}.hero{min-height:78vh}section{padding:52px 0}.panel{padding:32px 22px}}
+</style>
+</head>
+<body>
+<div id="lock">
+  <div class="panel">
+    <div class="crest">✦</div>
+    <div class="eyebrow">A special day · 19 November</div>
+    <h1>19.11</h1>
+    <h2>GENTLEMEN OF 10A4</h2>
+    <p class="sub">MỘT MÓN QUÀ NHỎ DÀNH CHO NHỮNG CHÀNG TRAI<br>BIỆT ĐỘI SIÊU NHÂN GAO · THẾ HỆ 2K11</p>
+    <input id="pass" type="password" inputmode="numeric" maxlength="8" placeholder="NHẬP MẬT KHẨU" aria-label="Mật khẩu">
+    <button class="btn" id="unlock">Mở món quà ✦</button>
+    <div id="error"></div>
+    <p class="sub">Chỉ dành cho những thành viên đặc biệt của 10A4</p>
+  </div>
+</div>
+
+<main id="site">
+  <div class="controls"><button id="music">♫ Bật nhạc</button><button id="top">↑ Đầu trang</button></div>
+  <header class="hero wrap">
+    <div>
+      <div class="eyebrow">19 November · International Men's Day</div>
+      <div class="seal">✦ ✧ ✦</div>
+      <h1>19.11</h1>
+      <div class="team">BIỆT ĐỘI SIÊU NHÂN GAO 10A4</div>
+      <p class="sub" style="margin-top:22px">A TRIBUTE TO THE BOYS OF OUR CLASS</p>
+      <div style="margin-top:32px"><a href="#letter" style="color:var(--gold);text-decoration:none;font:12px Arial,sans-serif;letter-spacing:.2em">KHÁM PHÁ MÓN QUÀ ↓</a></div>
+    </div>
+  </header>
+
+  <section id="letter" class="wrap">
+    <div class="rule"></div>
+    <div class="eyebrow">A message from 10A4</div>
+    <h2>Gửi những chàng trai của lớp mình</h2>
+    <div class="message">
+      Nhân ngày Quốc tế Nam giới 19/11, chúc toàn thể các chàng trai 10A4 luôn mạnh khỏe,
+      vui vẻ, tự tin và giữ được nhiệt huyết của tuổi trẻ. Mong các bạn luôn có đủ bản lĩnh
+      để theo đuổi điều mình yêu thích, đủ kiên trì để vượt qua thử thách và đủ chân thành
+      để trân trọng những người bên cạnh mình.
+      <br><br>
+      Cảm ơn vì đã góp phần tạo nên những tiếng cười, những kỷ niệm và cả những khoảnh khắc
+      rất riêng của tập thể này. Dù đôi lúc lớp mình có thể ồn ào, nghịch ngợm hay “bất ổn”
+      một chút, mong rằng chúng ta vẫn luôn đoàn kết và cùng nhau tạo nên một năm học thật đáng nhớ.
+    </div>
+    <div class="quote">“Không cần phải trở thành người hoàn hảo,<br>chỉ cần mỗi ngày đều cố gắng trở thành phiên bản tốt hơn của chính mình.”</div>
+    <div class="spark">✦ ✧ ✦</div>
+  </section>
+
+  <section class="wrap">
+    <div class="rule"></div>
+    <div class="eyebrow">The squad · 2K11</div>
+    <h2>Biệt đội siêu nhân Gao 10A4</h2>
+    <p class="message">Mỗi người một cá tính, mỗi người một màu sắc — cùng nhau tạo nên một tập thể không thể thay thế.</p>
+    <div class="grid">
+      <div class="tile"><b>勇 · DŨNG KHÍ</b><span>Dám thử sức, không ngại khó khăn.</span></div>
+      <div class="tile"><b>信 · TINH THẦN</b><span>Giữ lời hứa, sống có trách nhiệm.</span></div>
+      <div class="tile"><b>友情 · TÌNH BẠN</b><span>Biết tôn trọng và đồng hành cùng nhau.</span></div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="rule"></div>
+    <div class="eyebrow">One class · One memory</div>
+    <h2>Chúc mừng ngày 19/11!</h2>
+    <p class="message">Chúc các “chiến binh” 10A4 luôn học tốt, sống vui, gặp nhiều may mắn và có thật nhiều kỷ niệm đẹp. Cảm ơn vì đã là một phần của 10A4!</p>
+    <div class="quote">HAPPY INTERNATIONAL MEN'S DAY<br><span class="gold">FROM 10A4 WITH RESPECT ♡</span></div>
+  </section>
+  <footer>
+    MADE WITH ♡ FOR THE BOYS OF CLASS 10A4<br>
+    19.11 · 2K11 GENERATION · BIỆT ĐỘI SIÊU NHÂN GAO
+  </footer>
+</main>
+<script>
+const lock=document.getElementById('lock'),site=document.getElementById('site'),pass=document.getElementById('pass'),err=document.getElementById('error');
+function enter(){if(pass.value==='03082026'){lock.style.display='none';site.style.display='block';window.scrollTo(0,0)}else{err.textContent='Mật khẩu chưa đúng. Thử lại nhé!';pass.value='';pass.focus()}}
+document.getElementById('unlock').addEventListener('click',enter);
+pass.addEventListener('keydown',e=>{if(e.key==='Enter')enter()});
+document.getElementById('top').addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+// Original, lightweight synthesized celebratory melody; starts only after the visitor taps the music button.
+let audio=null, playing=false, timer=null, noteIndex=0;
+const notes=[523.25,659.25,783.99,659.25,587.33,698.46,880,698.46,523.25,659.25,783.99,1046.5];
+function playNote(){
+ if(!audio||!playing)return;
+ const osc=audio.createOscillator(),gain=audio.createGain();
+ osc.type='sine';osc.frequency.value=notes[noteIndex%notes.length];
+ gain.gain.setValueAtTime(.0001,audio.currentTime);
+ gain.gain.exponentialRampToValueAtTime(.045,audio.currentTime+.04);
+ gain.gain.exponentialRampToValueAtTime(.0001,audio.currentTime+.42);
+ osc.connect(gain);gain.connect(audio.destination);osc.start();osc.stop(audio.currentTime+.44);
+ noteIndex++;
+}
+document.getElementById('music').addEventListener('click',async()=>{
+ const btn=document.getElementById('music');
+ if(!audio)audio=new (window.AudioContext||window.webkitAudioContext)();
+ if(audio.state==='suspended')await audio.resume();
+ playing=!playing;
+ if(playing){playNote();timer=setInterval(playNote,470);btn.textContent='♫ Tắt nhạc'}
+ else{clearInterval(timer);btn.textContent='♫ Bật nhạc'}
+});
+</script>
+</body>
+</html>
